@@ -4,7 +4,7 @@ class ModelVin {
 
     public static function AjoutVin($tab){
 
-    $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+    $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
     $req = $bdd->prepare('INSERT INTO wine(name_wine,price,text_wine,id_aoc,id_cat) VALUES( :nom, :prix, :description, :id_aoc, :id_cat)');
 
@@ -28,7 +28,7 @@ class ModelVin {
 
     public static function GetAllActiveWine(){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->query('SELECT * FROM wine WHERE etat = 1');
 
@@ -39,7 +39,7 @@ class ModelVin {
 
     public static function GetAllInactiveWine(){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->query('SELECT * FROM wine WHERE etat = 0');
 
@@ -53,7 +53,7 @@ class ModelVin {
 
     public static function GetCat($id){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('SELECT des_cat FROM category WHERE id_cat = ? ');
 
@@ -67,7 +67,7 @@ class ModelVin {
 
     public static function GetAoc($id){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('SELECT des_aoc FROM aoc WHERE id_aoc = ? ');
 
@@ -81,7 +81,7 @@ class ModelVin {
 
     public static function GetIdCat($des_cat){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('SELECT id_cat FROM category WHERE des_cat LIKE ? ');
 
@@ -95,8 +95,8 @@ class ModelVin {
 
     public static function GetIdAoc($des_aoc){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
-        
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+
         $req = $bdd->prepare('SELECT id_aoc FROM aoc WHERE des_aoc LIKE ? ');
 
         $req->execute(array($des_aoc));
@@ -110,7 +110,7 @@ class ModelVin {
     public static function ValiderVin($id){
 
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('UPDATE wine SET etat = 1 WHERE id_wine = ?');
 
@@ -120,7 +120,7 @@ class ModelVin {
 
     public static function SupprimerVin($id){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('DELETE from wine WHERE id_wine = ? ');
 
@@ -129,7 +129,7 @@ class ModelVin {
 
     public static function GetInformation($id){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('SELECT * FROM wine WHERE id_wine = ? ');
 
@@ -141,7 +141,7 @@ class ModelVin {
 
         public static function GetAllWineSearch($motclef, $id_cat, $id_aoc){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('SELECT * FROM wine WHERE etat = 1 AND id_wine = (SELECT id_wine FROM wine WHERE name_wine = ? OR id_aoc = ? OR id_cat = ? )');
 
@@ -154,7 +154,7 @@ class ModelVin {
 
     public static function GetAllCat(){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->query('SELECT * FROM category');
 
@@ -164,7 +164,7 @@ class ModelVin {
 
     public static function GetAllAoc(){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->query('SELECT * FROM aoc');
 
@@ -174,7 +174,7 @@ class ModelVin {
 
     public static function AddAoc($des_aoc){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('INSERT INTO aoc(des_aoc) VALUES(?)');
 
@@ -184,7 +184,7 @@ class ModelVin {
 
     public static function AddCat($des_cat){
 
-        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
+        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 
         $req = $bdd->prepare('INSERT INTO category(des_cat) VALUES(?)');
 
