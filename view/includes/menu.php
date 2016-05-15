@@ -19,7 +19,7 @@
             require_once '../model/model_utilisateur.php';
             ?>
 
-            <?php if ((empty($_COOKIE['ch_rdm'])) /*OR (!ModelUtilisateur::IsUser($_COOKIE['ch_rdm'])) OR(!ModelAdmin::IsAdmin($_COOKIE['ch_rdm']))*/) { ?>
+            <?php if ((empty($_COOKIE['ch_rdm'])) OR ((!ModelUtilisateur::IsUser($_COOKIE['ch_rdm'])) AND (!ModelAdmin::IsAdmin($_COOKIE['ch_rdm'])))) { ?>
 
               <li><a href="../controller/controller_recherche_vin.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Catalogue Vin</a></li>
               <li class="compte">

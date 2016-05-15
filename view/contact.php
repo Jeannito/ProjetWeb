@@ -22,8 +22,6 @@
                     <p class='p1'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> E-mail : amateur-de-vin@gmail.com</p>
                     <p class='p1'><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>  Adresse : 10 rue Bouschet de Bernard</p>
                     <p class='p1'><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>    Numéro de telephone : 0636751961</p>
-                    <?php echo $_COOKIE['ch_rdm'];?>
-                    <?php echo $_COOKIE['pseudo'];?>
                 </div>
             </div>
         </div>
