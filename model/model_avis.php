@@ -2,7 +2,7 @@
 
 class ModelAvis {
 
-
+    //Fonction permettant d'ajouter un avis
     public static function AjouterAvis($tab){
 
     $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -13,6 +13,7 @@ class ModelAvis {
     
     }
 
+    //Fonction permettant de supprimer un avis mais que je n'exploite pas encore
     public static function SupprimerAvis($id_avis){
 
     $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -23,19 +24,9 @@ class ModelAvis {
     
     }
 
-    /*public static function GetAllNotice($id){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
-
-        $req = $bdd->prepare('SELECT * FROM notice WHERE id_vin = ?');
-
-        $res = $req -> execute(array($id));
-
-        return $res -> fetchAll(PDO::FETCH_OBJ);
-        
-    }*/
-
-        public static function GetAllNotice($id_vin){
+    //Focntion permettant de recuperer tout les avis associer a un vin
+    public static function GetAllNotice($id_vin){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
 

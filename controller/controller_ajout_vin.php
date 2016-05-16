@@ -1,6 +1,6 @@
 <?php
 
-
+//appel du model ajout vin et insetion du vin dans la bse de donnée
 require_once '../model/model_vin.php';
 
 

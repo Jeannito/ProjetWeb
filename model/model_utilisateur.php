@@ -3,6 +3,7 @@
 class ModelUtilisateur {
 
 
+    //Fonction inscrivant un utilisateur
     public static function InscrireUtilisateur($tab){
 
     $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -14,6 +15,7 @@ class ModelUtilisateur {
     //echo "<div class='para'> Vous vous etes bien inscrit et vous allez donc etre redirigé vers l'acceuil </div>";
     }
 
+    //Fonction verifiant le pseudo d'un utilisateur
     public static function Verifpseudo($pseudo){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -38,7 +40,7 @@ class ModelUtilisateur {
 
     }
 
-
+    //Fonction connectant un utilisateur
     public static function ConnexionUtilisateur($login, $mdp){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -61,6 +63,7 @@ class ModelUtilisateur {
         }
     }
 
+    //Fonction modifiant un utilisateur
     public static function ModifierUtilisateur($tab){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -75,6 +78,7 @@ class ModelUtilisateur {
         
     }
 
+    //Fonction supprimant un utilisateur
     public static function SupprimerUtilisateur($id){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -85,6 +89,7 @@ class ModelUtilisateur {
 
     }
 
+    //Focntion recuperant tout les utilisateur
         public static function GetAllUsers(){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -95,6 +100,7 @@ class ModelUtilisateur {
 
     }
 
+    //Fonction recuperant toutes les informations d'un utilisateur
     public static function GetInformation($pseudo){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -107,6 +113,7 @@ class ModelUtilisateur {
 
     }
 
+    //Fonction recuperant le nom d'un utilisateur
     public static function GetNameUser($id){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -120,6 +127,7 @@ class ModelUtilisateur {
         return $res['pseudo_user'];
     }
 
+    //Fonction recuperant l'id de l'utilisateur
     public static function GetIdUser($pseudo){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -129,6 +137,7 @@ class ModelUtilisateur {
         return $req -> fetch();
     }
 
+    //fonction verifiant si l'utilisateur en est bien un
     public static function IsUser($ch_rdm){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');

@@ -1,6 +1,7 @@
 <?php
 
-require_once '../view/acceuil.php';
+//appel de la vue accueill
 
+require_once '../view/acceuil.php';
 
 ?>

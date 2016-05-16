@@ -25,6 +25,8 @@ class ModelAdmin {
         }
     }*/
 
+        //Fonction permettant la connexion d'un admin
+
         public static function ConnexionAdmin($login, $mdp){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -46,6 +48,8 @@ class ModelAdmin {
         }
     }
 
+    //fonction permettant l'inscription d'un admin
+
     public static function InscrireAdmin($tab){
 
     $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -56,6 +60,8 @@ class ModelAdmin {
     
     //echo "<div class='para'> Vous vous etes bien inscrit et vous allez donc etre redirigé vers l'acceuil </div>";
     }
+
+    //fonction permettant de verifier le pseudo lors de l'inscription
 
     public static function Verifpseudo($pseudo){
 
@@ -79,6 +85,7 @@ class ModelAdmin {
 
     }
 
+    //fonction permettant de verifier si l'utilisateur est bien un admin
     public static function IsAdmin($ch_rdm){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -98,6 +105,8 @@ class ModelAdmin {
             return false;
         }
     }
+
+    //Fonction permettant d'obtenir tout les informations d'un admin
 
     public static function GetInformation($pseudo){
 

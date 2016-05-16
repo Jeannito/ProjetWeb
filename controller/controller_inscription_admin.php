@@ -1,5 +1,6 @@
 <?php
 
+//Meme fonctionnement que l'inscription utilisateur mais pour la table des administrateur
 
 require_once '../model/model_admin.php';
 

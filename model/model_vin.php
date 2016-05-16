@@ -2,6 +2,7 @@
 
 class ModelVin {
 
+    //Fonction permettant d'ajouter un vin 
     public static function AjoutVin($tab){
 
     $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -26,6 +27,8 @@ class ModelVin {
         
     }*/
 
+    //Fonction renvoyant touyt les vin actif, c'est a dire validé
+
     public static function GetAllActiveWine(){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -36,6 +39,8 @@ class ModelVin {
 
         
     }
+
+    //fonction renvoyant tout les vin non validé
 
     public static function GetAllInactiveWine(){
 
@@ -49,7 +54,7 @@ class ModelVin {
     }
 
 
-
+    //Fonction renvoyant la categorie d'un vin
 
     public static function GetCat($id){
 
@@ -65,6 +70,7 @@ class ModelVin {
 
     }
 
+    //Fonction renvoyant l'aoc d'un vin
     public static function GetAoc($id){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -79,6 +85,7 @@ class ModelVin {
 
     }
 
+    // fonction renvoyant l'id d'une cat
     public static function GetIdCat($des_cat){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -92,6 +99,8 @@ class ModelVin {
         return $res['id_cat'];
 
     }
+
+    // fonction renvoyant l'id d'un aoc
 
     public static function GetIdAoc($des_aoc){
 
@@ -107,6 +116,8 @@ class ModelVin {
 
     }
 
+    //fonction validant le vin
+
     public static function ValiderVin($id){
 
 
@@ -118,6 +129,8 @@ class ModelVin {
 
     }
 
+    //fonction supprimant le vin
+
     public static function SupprimerVin($id){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -127,6 +140,7 @@ class ModelVin {
         $req->execute(array($id));
     }
 
+    //fonction recuperant toutes les information d'un vin
     public static function GetInformation($id){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -138,6 +152,8 @@ class ModelVin {
         return $req -> fetch();
 
     }
+
+        //Fonction de recherche pour les vins
 
         public static function GetAllWineSearch($motclef, $id_cat, $id_aoc){
 
@@ -152,6 +168,8 @@ class ModelVin {
         return $req -> fetchAll(PDO::FETCH_OBJ);
     }
 
+    //fonction retournant toutes les categorie
+
     public static function GetAllCat(){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -161,6 +179,8 @@ class ModelVin {
         return $req -> fetchAll(PDO::FETCH_OBJ);
 
         }
+
+    //fonction retournant tout les aoc
 
     public static function GetAllAoc(){
 
@@ -172,6 +192,7 @@ class ModelVin {
 
         }
 
+    //Fonction ajoutant un aoc
     public static function AddAoc($des_aoc){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
@@ -182,6 +203,7 @@ class ModelVin {
 
     }
 
+    //Fonction ajoutant une categorie
     public static function AddCat($des_cat){
 
         $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
