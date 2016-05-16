@@ -8,3 +8,4 @@
 <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 <link href="../assets/style.css" rel="stylesheet">
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+<link rel="icon" type="image/png" href="../assets/favicon.ico" />

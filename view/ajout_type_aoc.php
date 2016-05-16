@@ -1,3 +1,13 @@
+<?php 
+require_once '../model/model_admin.php';
+if (empty($_COOKIE['ch_rdm'])){
+  echo "Vous n'etes pas autorisé à accéder à cette page";
+}
+else if (ModelAdmin::IsAdmin($_COOKIE['ch_rdm'])){
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,3 +46,7 @@
 
 </body>
 </html>
+
+<?php
+}
+?>
