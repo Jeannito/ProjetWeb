@@ -3,10 +3,9 @@
 class ModelUtilisateur {
 
 
-    //Fonction inscrivant un utilisateur
     public static function InscrireUtilisateur($tab){
 
-    $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
     $req = $bdd->prepare('INSERT INTO user(name_user,firstname_user,pseudo_user,psswd_user,mail_user, ch_rdm) VALUES( :nom, :prenom, :login, :mdp, :mail, :ch_rdm)');
 
@@ -15,10 +14,9 @@ class ModelUtilisateur {
     //echo "<div class='para'> Vous vous etes bien inscrit et vous allez donc etre redirigé vers l'acceuil </div>";
     }
 
-    //Fonction verifiant le pseudo d'un utilisateur
     public static function Verifpseudo($pseudo){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
 
     	$req = $bdd->prepare('SELECT COUNT(*) FROM user WHERE pseudo = ? ');
@@ -40,10 +38,10 @@ class ModelUtilisateur {
 
     }
 
-    //Fonction connectant un utilisateur
+
     public static function ConnexionUtilisateur($login, $mdp){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT COUNT(*) FROM user WHERE pseudo_user = ? AND psswd_user = ?');
 
@@ -63,10 +61,9 @@ class ModelUtilisateur {
         }
     }
 
-    //Fonction modifiant un utilisateur
     public static function ModifierUtilisateur($tab){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $sup = $bdd->prepare('DELETE FROM user WHERE pseudo_user= ?');
 
@@ -78,10 +75,9 @@ class ModelUtilisateur {
         
     }
 
-    //Fonction supprimant un utilisateur
     public static function SupprimerUtilisateur($id){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('DELETE from user WHERE id_user= ? ');
 
@@ -89,10 +85,9 @@ class ModelUtilisateur {
 
     }
 
-    //Focntion recuperant tout les utilisateur
         public static function GetAllUsers(){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->query('SELECT * FROM user');
 
@@ -100,10 +95,9 @@ class ModelUtilisateur {
 
     }
 
-    //Fonction recuperant toutes les informations d'un utilisateur
     public static function GetInformation($pseudo){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT * from user WHERE pseudo_user = ? ');
 
@@ -113,10 +107,9 @@ class ModelUtilisateur {
 
     }
 
-    //Fonction recuperant le nom d'un utilisateur
     public static function GetNameUser($id){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT pseudo_user FROM user WHERE id_user = ? ');
 
@@ -127,20 +120,18 @@ class ModelUtilisateur {
         return $res['pseudo_user'];
     }
 
-    //Fonction recuperant l'id de l'utilisateur
     public static function GetIdUser($pseudo){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->query('SELECT id_user FROM user WHERE pseudo_user = \'' . $pseudo . '\'');
 
         return $req -> fetch();
     }
 
-    //fonction verifiant si l'utilisateur en est bien un
     public static function IsUser($ch_rdm){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT COUNT(*) FROM user WHERE ch_rdm = ? ');
 

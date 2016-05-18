@@ -15,7 +15,6 @@ else
 	{*/
 
 
-		//verification du pseudo
 		if (ModelUtilisateur::Verifpseudo($_POST['login'])) {
 
 			$login= $_POST['login'];
@@ -24,10 +23,8 @@ else
 			$mail= $_POST['mail'];
 			$mdp = sha1($_POST['mdp']);
 			$length = 15;
-			//association d'une chaine d'une longueur de  caracteres a chaque nouvel adhérent
 			$randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
 
-			//création d'un tableau pour inserer les données du formulaire dans la base de donné
 			$tab=array(
 
 		            'login' => htmlspecialchars($login),
@@ -52,10 +49,45 @@ else
 			else {
 
 				echo "Ce pseudo est deja utilisé";
-
-				//redirection car mauvais pseudo
 				header("Location: ../view/inscription.php");
 
 			}
+
+			
+		//}
+
+/*if (isset($_POST['login']) AND isset($_POST['mdp']) AND isset($_POST['nom']) AND isset($_POST['prenom'])AND isset($_POST['mail']) )
+{
+	$login= $_POST['login'];
+	$nom = $_POST['nom'];
+	$prenom = $_POST['prenom'];
+	$mail= $_POST['mail'];
+	$mdp = $_POST['mdp'];
+
+	$tab=array(
+
+            'login' => $login,
+
+            'mdp' => $mdp,
+
+            'nom' => $nom,
+
+            'prenom' => $prenom,
+
+            'mail' => $mail);
+
+	ModelInscription::InscrireUtilisateur($tab);
+	header('Location: http://localhost/webApp/view/acceuil.php');
+	exit();
+}
+
+else
+{
+	echo "Vous avez mal rempli le formulaire";
+	header('Location : http://localhost/webApp/view/inscription.php');
+	exit();
+}*/
+
+//require_once '../view/acceuil.php';
 
  ?>

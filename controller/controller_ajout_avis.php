@@ -1,6 +1,5 @@
 <?php
 
-//ajout d'un avis par un utilisateur
 
 require_once '../model/model_avis.php';
 require_once '../model/model_utilisateur.php';

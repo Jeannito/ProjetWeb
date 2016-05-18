@@ -1,7 +1,5 @@
 <?php
 
-//controller permettant de verifier si la personne se connectant est bien un admin et création des cookies
-
 require_once '../model/model_admin.php';
 
 if (ModelAdmin::ConnexionAdmin($_POST['login'], sha1($_POST['mdp'])))

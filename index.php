@@ -1,8 +1,8 @@
 <?php 
-	//require_once '/view/acceuil.php';
-	//header("Location: controller/controller_acceuil.php");
-?>
 
+	//header("Location: controller/controller_acceuil.php");
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.ico" />
 <SCRIPT language="Javascript">
 function cookie() { 
-alert ('Ce site utilise des cookies, lors de votre naviguation il est possible que le navigateur enregistre des cookie sur votre ordinateur.');
+alert ('Ce site utilise des cookies, lors de votre naviguation il est possible que le navigateur enregistre des cookies sur votre ordinateur.');
 }
 </SCRIPT>
 </head>
@@ -35,7 +35,7 @@ alert ('Ce site utilise des cookies, lors de votre naviguation il est possible q
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="controller/controller_acceuil.php">Amateur de vin</a>
+          <a class="navbar-brand" href="controller/controller_communaute.php">Amateur de vin</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

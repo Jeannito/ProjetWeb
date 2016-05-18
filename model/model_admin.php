@@ -25,11 +25,9 @@ class ModelAdmin {
         }
     }*/
 
-        //Fonction permettant la connexion d'un admin
-
         public static function ConnexionAdmin($login, $mdp){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT COUNT(*) FROM administrator WHERE pseudo_admin = ? AND psswd_admin = ?');
 
@@ -48,11 +46,9 @@ class ModelAdmin {
         }
     }
 
-    //fonction permettant l'inscription d'un admin
-
     public static function InscrireAdmin($tab){
 
-    $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
     $req = $bdd->prepare('INSERT INTO administrator(name_admin,firstname_admin,pseudo_admin,psswd_admin,mail_admin, ch_rdm_admin) VALUES( :nom, :prenom, :login, :mdp, :mail, :ch_rdm)');
 
@@ -61,11 +57,9 @@ class ModelAdmin {
     //echo "<div class='para'> Vous vous etes bien inscrit et vous allez donc etre redirigé vers l'acceuil </div>";
     }
 
-    //fonction permettant de verifier le pseudo lors de l'inscription
-
     public static function Verifpseudo($pseudo){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
 
         $req = $bdd->prepare('SELECT COUNT(*) FROM administrator WHERE pseudo_admin = ? ');
@@ -85,10 +79,9 @@ class ModelAdmin {
 
     }
 
-    //fonction permettant de verifier si l'utilisateur est bien un admin
     public static function IsAdmin($ch_rdm){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT COUNT(*) FROM administrator WHERE ch_rdm_admin = ? ');
 
@@ -106,11 +99,9 @@ class ModelAdmin {
         }
     }
 
-    //Fonction permettant d'obtenir tout les informations d'un admin
-
     public static function GetInformation($pseudo){
 
-        $bdd = new PDO('mysql:host=localhost;dbname=amateur_vin_bd;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.9.75.130:3306;dbname=amateurdevin;charset=utf8', 'adminGEm89Ak', 'btSPRKVIEHSw');
 
         $req = $bdd->prepare('SELECT * from administrator WHERE pseudo_admin = ? ');
 

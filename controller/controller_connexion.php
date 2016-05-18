@@ -1,7 +1,5 @@
 <?php
 
-//controller permettant de verifier si la personne se connectant est bien un utilisateur et création des cookies
-
 require_once '../model/model_utilisateur.php';
 
 

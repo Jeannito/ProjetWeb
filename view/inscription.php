@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>Inscritption</title>
-<?php include 'includes/entete.php' ?>
+<?php include 'includes/entete.php'; ?>
 </head>
 
  <body>

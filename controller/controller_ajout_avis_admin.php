@@ -1,6 +1,5 @@
 <?php
 
-//insertion d'un avis dans la table des avis en recuperant les données necessaires
 
 require_once '../model/model_avis.php';
 require_once '../model/model_admin.php';
@@ -18,12 +17,10 @@ $tab=array(
 
 ModelAvis::AjouterAvis($tab);
 
-/*
-test
 echo $id_user;
 echo $text;
 echo $id_vin;
-*/
+
 
 header("Location: ../controller/controller_recherche_vin.php");
 

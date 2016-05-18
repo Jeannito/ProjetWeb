@@ -1,7 +1,5 @@
 <?php
 
-//ajout du type et de l'aoc par un administrateur en fonction des infos envoyé par le formulaire
-
 require_once '../model/model_vin.php';
 
 if(($_POST['des_aoc']==''))

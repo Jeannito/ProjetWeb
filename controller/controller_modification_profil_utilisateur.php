@@ -1,6 +1,6 @@
 <?php
 
-//controller permettant de modifier un utilisateur
+
 require_once '../model/model_utilisateur.php';
 
 		if (ModelUtilisateur::Verifpseudo($_POST['login'])) {
